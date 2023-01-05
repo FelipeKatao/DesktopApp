@@ -22,6 +22,7 @@ conf.ReadThemesInSystem()
 #Estilos customizados para a pagina 
 StylePageMenu = Style()
 StylePageMenu.configure("A.TFrame",background = conf.ColorClass[0]["background"])
+StylePageMenu.configure("B.TFrame",background=conf.ColorClass[0]["color"],foreground=conf.ColorClass[0]["color"])
 
 #Importação de informação
 
@@ -52,6 +53,7 @@ Tasks =""
 for value in TaskCreated:
     Tasks += "<h4 style='color:"+conf.ColorClass[0]["color"]+";'>"+value+"</h4>"
     print(Tasks)
+var1 = ""
 
 l1 = HTMLLabel(master, html=""" 
 <div style='background-color:"""+conf.ColorClass[0]["background"]+"""; font-family: 'Chivo Mono', monospace;'>
@@ -60,13 +62,14 @@ l1 = HTMLLabel(master, html="""
 """+Tasks+"""
 </div>
     """,font=("Calibri", 10))
+c1 = Checkbutton(l1, text='Python',variable=var1, onvalue=1, offvalue=0)
 menu_frame.pack(fill="x",pady=4)
 Bt_newCol.pack(side="left")
 Bt_updateCol.pack(side="left")
 Bt_Config.pack(side="left")
 l1.configure(bg=conf.ColorClass[0]["background"])
 l1.pack(fill="both", expand=True,padx=400,pady=50)
-
+c1.pack(side="left")
 #Fim do conteudo da Pagina
 
 
