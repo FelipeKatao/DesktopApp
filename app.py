@@ -47,11 +47,17 @@ tese = "abc"
 master.bind('r', lambda event: r.UpdateItem(l1,tese,master))
 
 #Adicionar tasks
+TaskCreated =  ReadDataBase().GetTasks()
+Tasks =""
+for value in TaskCreated:
+    Tasks += "<h4 style='color:"+conf.ColorClass[0]["color"]+";'>"+value+"</h4>"
+    print(Tasks)
 
 l1 = HTMLLabel(master, html=""" 
 <div style='background-color:"""+conf.ColorClass[0]["background"]+"""; font-family: 'Chivo Mono', monospace;'>
 <h1 style='color:"""+conf.ColorClass[0]["color"]+""";'background-color:#6c1e7b; font-family: 'Open Sans', sans-serif;'>"""+t["titulo"]+"""</h1>
 <h2 style='color:"""+conf.ColorClass[0]["color"]+""";font-family: 'Chivo Mono', monospace;'>"""+t["subtitulo"]+"""</h2>
+"""+Tasks+"""
 </div>
     """,font=("Calibri", 10))
 menu_frame.pack(fill="x",pady=4)

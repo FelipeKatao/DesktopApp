@@ -2,8 +2,8 @@
     <nootbook  name = "inicial">
         <titulo>Titulo do seu Nootbook</titulo>
         <subtitulo>Modifique o seu nootbook</subtitulo>
-        <tasks>Task 001</tasks>
-        <tasks>Task 002</tasks>
-        <tasks>Task 003</tasks>
+        <tasks>Lembrar de estudar JavaScript</tasks>
+        <tasks>Estudar frameworks Python</tasks>
+        <tasks>Entregar o Projeto para o site.</tasks>
     </nootbook>
 </database>
