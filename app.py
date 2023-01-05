@@ -7,6 +7,8 @@ from ConfigBox import ConfigOpt
 from ReadData import ReadDataBase
 from Configurates import Config
 import RenderWidgets
+from PIL import Image
+from PIL import ImageTk
 
 # Configurações padrões da Pagina
 master = Tk()
@@ -62,7 +64,12 @@ l1 = HTMLLabel(master, html="""
 """+Tasks+"""
 </div>
     """,font=("Calibri", 10))
-c1 = Checkbutton(l1, text='Python',variable=var1, onvalue=1, offvalue=0)
+photo = Image.open("./img/Check.png")
+photo = photo.resize((40,40),Image.ANTIALIAS)
+photoImg =  ImageTk.PhotoImage(photo)
+# Teste para criação de Tasks Isoladas
+c1 = Button(l1, text='Python',image=photoImg,compound = LEFT)
+
 menu_frame.pack(fill="x",pady=4)
 Bt_newCol.pack(side="left")
 Bt_updateCol.pack(side="left")
